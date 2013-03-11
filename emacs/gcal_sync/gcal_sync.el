@@ -1,4 +1,5 @@
 ;;set the location of the diary file
+;;my-emacs-org is a pointer to my location - remove and hard code or whatever means you'd like
 (setq diary-file (concat my-emacs-org "diary_entries"))
 
 (setq view-diary-entries-initially t
