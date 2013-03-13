@@ -20,7 +20,7 @@
 	;; Applying the lambda to each list of the alist, which returns that list's car
 	(interactive
 	 (list
-	  (completing-read "Choose shortcut: " (mapcar '(lambda (arg) (car arg)) my-shortcuts-alist))))
+	  (completing-read "Choose shortcut: " (mapcar 'car my-shortcuts-alist))))
 	
 	;; Use the slected shortcut key with assoc to pull out the proper lsit from within the alist
 	;; Retrieve the cdr of that list, which is the actual location to give to dired
