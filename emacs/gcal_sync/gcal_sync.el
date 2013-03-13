@@ -8,7 +8,9 @@
 
 ;;all google / ical calendars to import
 ;; get the private iCal URLs from your Google calendar settings
-(setq my-ical-calendars-alist '("test", "https://www.google.com/calendar/icaltest.ics"))
+(setq my-ical-calendars-alist '(
+      ("test", "https://www.google.com/calendar/icaltest.ics")
+      ))
 
 
 ;;imports all icals defined in my-ical-calendars-alist to the emacs calendar, removing duplicates!
@@ -97,7 +99,7 @@ The argument is a full path to said diary file."
   "Imports an ICS calendar from a URL into the diary"
   (interactive
    (list
-    (completing-read "Choose pre-configured calendar: " (mapcar '(lambda (arg) (car arg)) my-ical-calendars-alist))))
+    (completing-read "Choose pre-configured calendar: " (mapcar 'car my-ical-calendars-alist))))
   (setq url-key (car(assoc url-key my-ical-calendars-alist)))
   (setq url-val (car(cdr(assoc url-key my-ical-calendars-alist))))
   (if (boundp 'diary-file) 
