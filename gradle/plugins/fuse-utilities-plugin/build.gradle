@@ -1,0 +1,26 @@
+apply plugin: 'groovy'
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+}
+
+apply plugin: 'maven'
+
+group = 'com.oeconnection.build'
+version ='1.4.2'
+
+defaultTasks 'clean', 'build', 'install'
+
+repositories {
+    maven { url 'http://ctcbuildsrv1.ctc.oeconnection.com:8080/nexus/content/groups/public' }
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: "http://ctcbuildsrv1.ctc.oeconnection.com:8080/nexus/content/repositories/Col-OEC") {
+            authentication(userName: "deployment", password: "deployment")
+        }
+		
+    }
+}
