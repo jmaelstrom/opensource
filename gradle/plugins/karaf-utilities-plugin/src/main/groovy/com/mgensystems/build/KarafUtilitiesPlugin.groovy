@@ -1,9 +1,9 @@
-package com.oec.build
+package com.mgensystems.build
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-class FuseUtilitiesPlugin implements Plugin<Project> {   
+class KarafUtilitiesPlugin implements Plugin<Project> {   
     static FeatureGenerator featureGenerator = new FeatureGenerator()
     
     @Override

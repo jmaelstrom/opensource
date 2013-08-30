@@ -1,0 +1,17 @@
+apply plugin: 'groovy'
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+}
+
+apply plugin: 'maven'
+
+group = 'com.mgensystems.build'
+version ='1.0.0'
+
+defaultTasks 'clean', 'build', 'install'
+
+repositories {
+    mavenCentral()
+}
